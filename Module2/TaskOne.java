@@ -1,6 +1,5 @@
 package Module2;
 
-
 public class TaskOne {
     public static void main(String[] args) {
         int[] array = new int[10];
@@ -15,9 +14,7 @@ public class TaskOne {
         multiplication(array);
         modulus(array);
         secondLargest(array);
-
     }
-
     public static void sum(int array[]) {
         int sum = 0;
         for (int anArray : array) {
@@ -25,34 +22,26 @@ public class TaskOne {
         }
         System.out.println("Result sum" + ' ' + sum);
     }
-
     public static void min(int array[]) {
-        int min;
-        min = array[0];
-
-        for (int i = 1; i < 10; i++) {
+        int min = array[0];
+        for (int i = 1; i < array.length; i++) {
             if (array[i] < min)
                 min = array[i];
-
         }
         System.out.println("Min = " + min);
-
     }
-
     public static void max(int array[]) {
-        int max;
-        max = array[0];
-        for (int i = 1; i < 10; i++) {
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) {
             if (array[i] > max) {
                 max = array[i];
             }
         }
         System.out.println("Max = " + max);
     }
-
     public static void maxPositive(int array[]) {
         int maxPositive = array[0];
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < array.length; i++) {
             if (array[i] > maxPositive) {
                 if (array[i] >= 0) {
                     maxPositive = array[i];
@@ -61,7 +50,6 @@ public class TaskOne {
         }
         System.out.println("Max positive = " + maxPositive);
     }
-
     public static void multiplication(int array[]) {
         int multiplication = 1;
         for (int anArray : array) {
@@ -69,21 +57,19 @@ public class TaskOne {
         }
         System.out.println("Multiplication = " + multiplication);
     }
-
     public static void modulus(int array[]) {
-        int modulus;
-        modulus = array[0] % array[9];
-        System.out.println("Modulus = " + modulus);
+        int modulus1 = array[0];
+        int modulus2 = array[9];
+        System.out.println("Modulus of first element = " + Math.abs(modulus1));
+        System.out.println("Modulus of last element = " + Math.abs(modulus2));
     }
-
     public static void secondLargest(int array[]) {
         int max = 0;
         int secondLargest = 0;
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < array.length; i++) {
             if (array[i] > max) {
                 secondLargest = max;
                 max = array[i];
-
             }
         }
         System.out.println("Second largest = " + secondLargest);
