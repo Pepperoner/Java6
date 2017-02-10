@@ -29,12 +29,10 @@ public class Utility {
     public static int maxPositive(int array[]) {
         int maxPositive = array[0];
         for (int i = 1; i < array.length; i++) {
-            if (array[i] > maxPositive) {
-                if (array[i] >= 0) {
+            if ((array[i] > maxPositive) && (array[i] >= 0 )) {
                     maxPositive = array[i];
                 }
             }
-        }
         return maxPositive;
     }
     public static int multiplication(int array[]) {
@@ -49,7 +47,7 @@ public class Utility {
         return modulus;
     }
     public static int modulusOfLastElement(int array[]) {
-        int modulus = Math.abs(array[9]);
+        int modulus = Math.abs(array[array.length - 1]);
         return modulus;
     }
     public static int secondLargest(int array[]) {
@@ -64,7 +62,7 @@ public class Utility {
                 }
             }
         }
-        secondLargest = array[8];
+        secondLargest = array[array.length - 2];
         return secondLargest;
     }
 }
