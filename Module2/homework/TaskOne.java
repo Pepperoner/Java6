@@ -6,7 +6,7 @@ public class TaskOne {
         int[] array = new int[10];
         System.out.println("Generated array ");
            for (int i = 0; i < array.length; i++) {
-               array[i] = (int) (Math.random() * 100 - 50);
+               array[i] = (int) (Math.random() * 40 - 20);
                System.out.print(array[i] + " ");
            }
         System.out.println();
