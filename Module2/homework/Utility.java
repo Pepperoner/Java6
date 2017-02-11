@@ -38,7 +38,9 @@ public class Utility {
     public static int multiplication(int array[]) {
         int multiplication = 1;
         for (int anArray : array) {
-            multiplication *= anArray;
+            if (anArray != 0) {
+                multiplication *= Math.abs(anArray);
+            }
         }
         return multiplication;
     }
