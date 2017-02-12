@@ -1,6 +1,8 @@
 package Module2.homework;
 
 import java.util.Formatter;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class TaskOne {
     public static void main(String[] args) {
@@ -15,7 +17,8 @@ public class TaskOne {
         System.out.println("Generated array of doubles ");
         for (int i = 0; i < doubleArray.length; i++) {
             doubleArray[i] = (Math.random() * 40 - 20);
-            System.out.print(doubleArray[i] + " ");
+            System.out.format("%.2f",doubleArray[i]);
+            System.out.print(" ");
         }
         System.out.println();
         System.out.println("Result sum of integers " + Utility.sum(intArray));
