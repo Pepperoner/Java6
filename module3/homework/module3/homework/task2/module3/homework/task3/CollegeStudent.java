@@ -23,6 +23,11 @@ public class CollegeStudent extends Student {
     public CollegeStudent() {
     }
 
+    @Override
+    public String toString() {
+        return "CollegeName" + this.collegeName;
+    }
+
     public String getCollegeName() {
         return collegeName;
     }

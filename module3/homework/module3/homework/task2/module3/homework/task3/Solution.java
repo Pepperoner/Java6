@@ -25,9 +25,9 @@ public class Solution {
         System.out.println(course3.getName() + " " + course3.getStartDate());
         System.out.println(course4.getName() + " " + course4.getHoursDuration() + " " + course4.getTeacherName());
         System.out.println(student.getFirstName() + " " + student.getLastName() + " " + student.getGroup());
-        System.out.println(student1.getLastName() + " " + student1.toString() + " " + Arrays.toString(new Course[]{course,course1,course2,course3,course4}));
+        System.out.println(student1.getLastName() + " " + " " + Arrays.toString(new Course[]{course,course1,course2,course3,course4}));
         System.out.println(collegeStudent.getFirstName() + " " + collegeStudent.getLastName() + " " + collegeStudent.getGroup());
-        System.out.println(collegeStudent1.getLastName() + " " + Arrays.toString(new Course[]{course,course1,course2,course3,course4}));
+        System.out.println(collegeStudent1.getLastName() + " " + " " + Arrays.toString(new Course[]{course,course1,course2,course3,course4}));
         System.out.println(collegeStudent2.getCollegeName() + " " + collegeStudent2.getRating() + " " + collegeStudent2.getId());
         System.out.println(specialStudent.getFirstName() + " " + specialStudent.getLastName() + " " + specialStudent.getGroup());
         System.out.println(specialStudent1.getLastName() + " " + Arrays.toString(new Course[]{course,course1,course2,course3,course4}));

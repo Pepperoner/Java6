@@ -19,7 +19,12 @@ public class Course {
         this.teacherName = teacherName;
     }
 
-    public void setStartDate(Date startDate) {
+    @Override
+    public String toString() {
+        return " " + this.name + " " + hoursDuration + " " + this.teacherName;
+    }
+
+    public void setStartDate(Date startDate ) {
         this.startDate = startDate;
     }
 
