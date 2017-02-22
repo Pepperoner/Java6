@@ -6,6 +6,7 @@ public class CollegeStudent extends Student {
     private long id;
 
     public CollegeStudent(String firstName, String lastName, int group) {
+
         super(firstName, lastName, group);
     }
 
