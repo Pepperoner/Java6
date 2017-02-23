@@ -1,4 +1,4 @@
-package module3.homework.module3.homework.task2.module3.homework.task3;
+package module3.homework.task4;
 
 public class CollegeStudent extends Student {
     private String collegeName;

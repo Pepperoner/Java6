@@ -1,4 +1,4 @@
-package module3.homework.module3.homework.task2.module3.homework.task3.module3.homework.task4;
+package module3.homework.task3;
 
 public class User {
     private String name;
@@ -17,24 +17,6 @@ public class User {
         this.companyName = companyName;
         this.salary = salary;
         this.currency = currency;
-    }
-    void paidSalary(int balance, int salary){
-        balance+=salary;
-        System.out.println(balance);
-    }
-    void withdraw (int sum) {
-        if (sum <= 1000)
-            balance *= LOW_COMMISSION;
-        else {balance*=HIGH_COMMISSION;
-        }
-        System.out.println(balance);
-    }
-    void companyNameLength(){
-        System.out.println(companyName.length());
-    }
-    void monthIncrease(int addMonth){
-        monthsOfEmployment+=addMonth;
-        System.out.println(monthsOfEmployment);
     }
 
     public String getName() {
@@ -83,5 +65,23 @@ public class User {
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    public int paidSalary(int balance, int salary){
+        balance+=salary;
+        return balance;
+    }
+    public int withdraw (int sum) {
+        if (sum <= 1000)
+            balance -= (int) (sum * LOW_COMMISSION) + sum;
+        else {balance -= (int) (sum * HIGH_COMMISSION) + sum;
+        }
+        return balance;
+    }
+    public int companyNameLength(){
+        return companyName.length();
+    }
+    public int monthIncrease(int addMonth){
+        return monthsOfEmployment+=addMonth;
     }
 }
