@@ -1,4 +1,4 @@
-package module3.homework.task4;
+package module3.homework.task3;
 
 public class CollegeStudent extends Student {
     private String collegeName;
@@ -23,11 +23,6 @@ public class CollegeStudent extends Student {
     public CollegeStudent() {
     }
 
-    @Override
-    public String toString() {
-        return "CollegeName" + this.collegeName;
-    }
-
     public String getCollegeName() {
         return collegeName;
     }
@@ -50,5 +45,10 @@ public class CollegeStudent extends Student {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "CollegeName" + this.collegeName;
     }
 }

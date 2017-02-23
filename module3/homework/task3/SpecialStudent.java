@@ -1,4 +1,4 @@
-package module3.homework.task4;
+package module3.homework.task3;
 
 public class SpecialStudent extends CollegeStudent {
     private long secretKey;

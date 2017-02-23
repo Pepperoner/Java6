@@ -1,4 +1,4 @@
-package module3.homework.task3;
+package module3.homework.task4;
 
 public class MainUser {
     public static void main(String[] args) {

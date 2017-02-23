@@ -1,4 +1,4 @@
-package module3.homework.task4;
+package module3.homework.task3;
 
 import java.util.Date;
 
@@ -17,11 +17,6 @@ public class Course {
         this.name = name;
         this.hoursDuration = hoursDuration;
         this.teacherName = teacherName;
-    }
-
-    @Override
-    public String toString() {
-        return " " + this.name + " " + hoursDuration + " " + this.teacherName;
     }
 
     public void setStartDate(Date startDate ) {
@@ -54,5 +49,10 @@ public class Course {
 
     public String getTeacherName() {
         return teacherName;
+    }
+
+    @Override
+    public String toString() {
+        return " " + this.name + " " + this.hoursDuration + " " + this.teacherName + " " + this.startDate;
     }
 }

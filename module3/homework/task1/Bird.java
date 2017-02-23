@@ -1,4 +1,4 @@
-package module3.homework;
+package module3.homework.task1;
 
 public class Bird {
     public void sing() {
