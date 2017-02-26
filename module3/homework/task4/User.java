@@ -72,11 +72,10 @@ public class User {
         return balance;
     }
     public int withdraw (int sum) {
-        if (sum <= 1000)
-            balance -= (int) (sum * LOW_COMMISSION) + sum;
-        else {balance -= (int) (sum * HIGH_COMMISSION) + sum;
+        if (sum <= 1000) {
+            return (int) (balance - ((sum * LOW_COMMISSION) + sum));
         }
-        return balance;
+        return  (int) (balance - ((sum * HIGH_COMMISSION) + sum));
     }
     public int companyNameLength(){
         return companyName.length();
