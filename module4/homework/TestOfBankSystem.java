@@ -1,6 +1,6 @@
 package module4.homework;
 
-public class Main {
+public class TestOfBankSystem {
 
     public static void main(String[] args) {
 

@@ -1,6 +1,6 @@
 package module4.homework;
 
-public abstract class Bank implements BankSystem {
+public abstract class Bank {
     private long id;
     private String bankCountry;
     private Currency currency;
@@ -9,16 +9,14 @@ public abstract class Bank implements BankSystem {
     private long rating;
     private long totalCapital;
 
-    abstract int getLimitOfWithdrawal();
-
-    abstract int getLimitOfFunding();
-
-    abstract int getMonthlyRate();
-
-    abstract int getCommission(int sum);
-
-    double moneyPaidMonthlyForSalary(){
-        return 0;
+    public Bank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalary, long rating, long totalCapital) {
+        this.id = id;
+        this.bankCountry = bankCountry;
+        this.currency = currency;
+        this.numberOfEmployees = numberOfEmployees;
+        this.avrSalary = avrSalary;
+        this.rating = rating;
+        this.totalCapital = totalCapital;
     }
 
     public long getId() {
@@ -76,4 +74,14 @@ public abstract class Bank implements BankSystem {
     public void setTotalCapital(long totalCapital) {
         this.totalCapital = totalCapital;
     }
+
+    public abstract int getLimitOfWithdrawal();
+
+    public abstract int getLimitOfFunding();
+
+    public abstract int getMonthlyRate();
+
+    public abstract int getCommission(int sum);
+
+    public abstract double moneyPaidMonthlyForSalary();
 }

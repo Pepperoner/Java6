@@ -2,13 +2,13 @@ package module4.homework;
 
 public class User {
 
-    long id;
-    String name;
-    double balance;
-    int monthOfEmployment;
-    String companyName;
-    int salary;
-    Bank bank;
+    private long id;
+    private String name;
+    private double balance;
+    private int monthOfEmployment;
+    private String companyName;
+    private int salary;
+    private Bank bank;
 
     public User(long id, String name, double balance, int monthOfEmployment, String companyName, int salary, Bank bank) {
         this.id = id;
@@ -18,19 +18,6 @@ public class User {
         this.companyName = companyName;
         this.salary = salary;
         this.bank = bank;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder result = new StringBuilder();
-        result.append("User: ").append(name);
-        result.append("\tBalance: ").append(balance);
-        result.append("\tCompany: ").append(companyName);
-        result.append("\tSalary: ").append(salary);
-        result.append("\tMonth of Employment: ").append(monthOfEmployment);
-        result.append("\tBank: ").append(getClass().getSimpleName());
-        result.append("\tID: ").append(id);
-        return result.toString();
     }
 
     public long getId() {
@@ -88,4 +75,18 @@ public class User {
     public void setBank(Bank bank) {
         this.bank = bank;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("User: ").append(name);
+        result.append("\tBalance: ").append(balance);
+        result.append("\tCompany: ").append(companyName);
+        result.append("\tSalary: ").append(salary);
+        result.append("\tMonth of Employment: ").append(monthOfEmployment);
+        result.append("\tBank: ").append(getClass().getSimpleName());
+        result.append("\tID: ").append(id);
+        return result.toString();
+    }
+
 }
