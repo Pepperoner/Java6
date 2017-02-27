@@ -49,6 +49,10 @@ public class CollegeStudent extends Student {
 
     @Override
     public String toString() {
-        return "CollegeName" + this.collegeName;
+        StringBuilder result = new StringBuilder();
+        result.append("Collage Name: ").append(collegeName);
+        result.append("\tRating: ").append(rating);
+        result.append("\tID: ").append(id);
+        return result.toString();
     }
 }

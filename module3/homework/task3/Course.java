@@ -53,6 +53,12 @@ public class Course {
 
     @Override
     public String toString() {
-        return " " + this.name + " " + this.hoursDuration + " " + this.teacherName + " " + this.startDate;
+        StringBuilder result = new StringBuilder();
+        result.append("Start Date: ").append(startDate);
+        result.append("\tName: ").append(name);
+        result.append("\tHours duration: ").append(hoursDuration);
+        result.append("\tTeacher Name: ").append(teacherName);
+        return result.toString();
     }
+
 }

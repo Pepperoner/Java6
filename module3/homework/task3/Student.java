@@ -1,5 +1,7 @@
 package module3.homework.task3;
 
+import java.util.Arrays;
+
 public class Student {
     private String firstName;
     private String lastName;
@@ -59,5 +61,16 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("First Name: ").append(firstName);
+        result.append("\tLast Name: ").append(lastName);
+        result.append("\tGroup: ").append(group);
+        result.append("\tCourse Taken: ").append(Arrays.toString(courseTaken));
+        result.append("\tAge: ").append(age);
+        return result.toString();
     }
 }
