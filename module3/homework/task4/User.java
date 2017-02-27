@@ -67,9 +67,8 @@ public class User {
         this.currency = currency;
     }
 
-    public int paidSalary(int balance, int salary){
-        balance+=salary;
-        return balance;
+    void paidSalary(){
+        System.out.println(balance+=salary);
     }
     public int withdraw (int sum) {
         if (sum <= 1000) {
