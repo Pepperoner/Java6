@@ -2,7 +2,7 @@ package module4.homework;
 
 public class EUBank extends Bank {
 
-    Currency currency = Currency.EUR;
+    private static final Currency currency = Currency.EUR;
 
     public EUBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalary, long rating, long totalCapital) {
         super(id, bankCountry, currency, numberOfEmployees, avrSalary, rating, totalCapital);
@@ -10,7 +10,7 @@ public class EUBank extends Bank {
 
     @Override
     public int getLimitOfWithdrawal() {
-        if (currency.equals(Currency.EUR)){
+        if (Currency.EUR.equals(currency)){
             return 2200;
         }
         return 2000;
@@ -18,7 +18,7 @@ public class EUBank extends Bank {
 
     @Override
     public int getLimitOfFunding() {
-        if (currency.equals(Currency.EUR)){
+        if (Currency.EUR.equals(currency)){
             return 20000;
         }
         return 10000;
@@ -26,7 +26,7 @@ public class EUBank extends Bank {
 
     @Override
     public int getMonthlyRate() {
-        if (currency.equals(Currency.EUR)){
+        if (Currency.EUR.equals(currency)){
             return 1;
         }
         return 0;
@@ -34,7 +34,7 @@ public class EUBank extends Bank {
 
     @Override
     public int getCommission(int sum) {
-        if (currency.equals(Currency.EUR)){
+        if (Currency.EUR.equals(currency)){
             return sum > 1000 ? 4 : 2;
         }
         return sum > 1000 ? 7 : 5;

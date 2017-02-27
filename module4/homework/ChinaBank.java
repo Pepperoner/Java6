@@ -2,7 +2,7 @@ package module4.homework;
 
 public class ChinaBank extends Bank {
 
-    Currency currency = Currency.USD;
+    private static final Currency currency = Currency.USD;
 
     public ChinaBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalary, long rating, long totalCapital) {
         super(id, bankCountry, currency, numberOfEmployees, avrSalary, rating, totalCapital);
@@ -10,7 +10,7 @@ public class ChinaBank extends Bank {
 
     @Override
     public int getLimitOfWithdrawal() {
-        if (currency.equals(Currency.USD)){
+        if (Currency.USD.equals(currency)){
             return 100;
         }
         return 150;
@@ -18,7 +18,7 @@ public class ChinaBank extends Bank {
 
     @Override
     public int getLimitOfFunding() {
-        if (currency.equals(Currency.USD)){
+        if (Currency.USD.equals(currency)){
             return 10000;
         }
         return 5000;
@@ -26,7 +26,7 @@ public class ChinaBank extends Bank {
 
     @Override
     public int getMonthlyRate() {
-        if (currency.equals(Currency.USD)){
+        if (Currency.USD.equals(currency)){
             return 1;
         }
         return 0;
@@ -34,7 +34,7 @@ public class ChinaBank extends Bank {
 
     @Override
     public int getCommission(int sum) {
-        if (currency.equals(Currency.USD)){
+        if (Currency.USD.equals(currency)){
             return sum > 1000 ? 5 : 3;
         }
         return sum > 1000 ? 11 : 10;
