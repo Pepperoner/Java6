@@ -3,17 +3,17 @@ package module5.homework;
 import java.time.LocalDate;
 import java.time.Month;
 
-public class GoogleDAO implements DAO {
+public class DAOImpl implements DAO {
 
     private static Room[] rooms = new Room[10];
 
-    public GoogleDAO() {
+    public DAOImpl() {
 
-        rooms[0] = new Room(18, 100, 2, LocalDate.of(2017, Month.SEPTEMBER, 12), "Halchion", "London");
+        rooms[0] = new Room(1, 100, 2, LocalDate.of(2017, Month.MARCH, 12), "Halchion", "London");
         rooms[1] = new Room(6, 500, 3, LocalDate.of(2017, Month.FEBRUARY, 28), "Four Seasons", "Madrid");
         rooms[2] = new Room(2, 200, 1, LocalDate.of(2017, Month.APRIL, 25), "Ukraina", "Kiev");
-        rooms[3] = new Room(3, 300, 2, LocalDate.of(2017, Month.MAY, 10), "Hilton", "New York");
-        rooms[4] = new Room(5, 500, 3, LocalDate.of(2018, Month.FEBRUARY, 28), "Four Seasons", "Madrid");
+        rooms[3] = new Room(7, 500, 3, LocalDate.of(2017, Month.FEBRUARY, 23), "Fall", "USA");
+        rooms[4] = new Room(8, 500, 3, LocalDate.of(2017, Month.FEBRUARY, 25), "Fall", "USA");
     }
 
     private int RoomsInDBCount(Room[] rooms) {
@@ -55,7 +55,7 @@ public class GoogleDAO implements DAO {
     public Room update(Room room) {
 
         for (int j = 0; j < rooms.length; j++) {
-            if (rooms[j].getId() == room.getId()) {  //rooms[j].equals(room
+            if (rooms[j].getId() == room.getId()) {
                 rooms[j] = room;
                 System.out.println("Update: " + room);
                 return room;
@@ -68,10 +68,10 @@ public class GoogleDAO implements DAO {
     @Override
     public Room findById(long id) {
 
-        for (int j = 0; j < rooms.length; j++) {
-            if (id == rooms[j].getId()) {
-                System.out.println("find by id: " + id + " " + rooms[j]);
-                return rooms[j];
+        for (Room room : rooms) {
+            if (id == room.getId()) {
+                System.out.println("find by id: " + id + " " + room);
+                return room;
             }
         }
         System.out.println("Find by id: there isn't room in DB");

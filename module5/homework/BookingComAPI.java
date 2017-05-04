@@ -1,21 +1,23 @@
 package module5.homework;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class BookingComAPI implements API {
 
-    private DAO dao = new BookingComDAO();
+    private DAO dao = new DAOImpl();
     public Room[] rooms = dao.getAll();
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        Room[] lookingForRoomsArray = new Room[0];
+        Room[] lookingForRoomsArray = new Room[5];
         Room lookingForRoom = new Room(0, price, persons, null, hotel, city);
 
-        for (int i = 0; i < rooms.length; i++) {
-            if (lookingForRoom.equals(rooms[i]) && rooms[i].getHotelName() == hotel)
-                lookingForRoomsArray = addElementToArray(lookingForRoomsArray, rooms[i]);
+        for (Room room : rooms) {
+            if (lookingForRoom.equals(room) && Objects.equals(room.getHotelName(), hotel))
+                lookingForRoomsArray = addElementToArray(lookingForRoomsArray, room);
         }
+        System.out.println(lookingForRoom);
         return lookingForRoomsArray;
     }
 

@@ -1,6 +1,7 @@
 package module5.homework;
 
 import java.util.Arrays;
+import module5.homework.*;
 
 public class Controller {
 
@@ -19,8 +20,8 @@ public class Controller {
         int count = 0;
         Room[] rooms;
 
-        for (int i = 0; i < apis.length; i++) {
-            rooms = apis[i].findRooms(price, persons, city, hotel);
+        for (API api : apis) {
+            rooms = api.findRooms(price, persons, city, hotel);
             System.arraycopy(rooms, 0, roomArray, count, rooms.length);
             count += rooms.length;
         }
@@ -35,11 +36,11 @@ public class Controller {
         int length1 = rooms1.length;
         int length2 = rooms2.length;
         int k = -1;
-        for (int i = 0; i < length1; i++) {
+        for (Room aRooms1 : rooms1) {
             for (int j = 0; j < length2; j++) {
-                if (rooms1[i] != null && rooms1[i].equals(rooms2[j]) && j != k) {
+                if (aRooms1 != null && aRooms1.equals(rooms2[j]) && j != k) {
                     k = j;
-                    rooms = addElementToArray(rooms, rooms1[i]);
+                    rooms = addElementToArray(rooms, aRooms1);
                     rooms = addElementToArray(rooms, rooms2[j]);
                 }
             }
@@ -47,25 +48,25 @@ public class Controller {
         return rooms;
     }
 
-    public static void saveToAllDAO(Room room, DAO[] dao) {
-        for (int i = 0; i < dao.length; i++) {
-            dao[i].save(room);
+    public static void saveToDAO(Room room, DAO[] dao) {
+        for (DAO aDao : dao) {
+            aDao.save(room);
         }
     }
 
-    public static void deleteFromAllDAO(Room room, DAO[] dao) {
-        for (int i = 0; i < dao.length; i++) {
-            dao[i].delete(room);
+    public static void deleteFromDAO(Room room, DAO[] dao) {
+        for (DAO aDao : dao) {
+            aDao.delete(room);
         }
     }
 
-    public static void updateToAllDAO(Room room, DAO[] dao) {
-        for (int i = 0; i < dao.length; i++) {
-            dao[i].update(room);
+    public static void updateToDAO(Room room, DAO[] dao) {
+        for (DAO aDao : dao) {
+            aDao.update(room);
         }
     }
 
-    public static Room[] findByIdInAllDAO(long id, DAO[] dao) {
+    public static Room[] findById(long id, DAO[] dao) {
         int daoLength = dao.length;
         Room[] rooms = new Room[daoLength];
         for (int i = 0; i < daoLength; i++) {
